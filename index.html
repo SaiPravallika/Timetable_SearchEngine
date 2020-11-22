@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Western Timetable Search Engine</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" href="stylesheet.css">
+<script src="C:\Users\kalip\ece9065-ssamayam-lab3\script.js"></script>
+</head>
+<body>
+<div id="head">
+<img src="western-university-vector-logo.png" alt="westernlogo"></img>
+<h1 id="heading"><b>Undergraduate Timetable Search Engine - Fall/Winter</b></h1>
+</div>
+<hr>
+<div id ="timetable">
+  <div id="form_timetable">
+  <table>
+    <tr>
+  <td><label><b>Subject:</b></label></td>
+  <td><input type="text" id="subject" pattern="/^[A-Za-z]+$/" placeholder="Enter Subject Name"></td>
+    </tr>
+  <tr><td><label><b>Course Number:</b></label></td>
+  <td><input type="text" id="course_number" placeholder="Enter course number"></td>
+  </tr>
+  <tr>
+  <td><label for="component"><b>Component:</b></label></td>
+  <td><select name="component" id="component">
+      <option value="none">None</option>
+      <option value="LEC">Lecture</option>
+      <option value="tutorial">Tutorial</option>
+      <option value="lab">Laboratory</option> 
+  </select></td>
+  </tr>
+  <tr><td><input type="submit" class="button" value="CourseCodes" onclick="SearchCoursebySubject()"></td>
+  <td><input type="submit" class="button" value="AvailableSubjects" onclick="SearchAvailableSubject()"></td></tr>
+  <tr><td><input type="submit" id="submit_button" value="submit" onclick="SearchTimetable()"></td></tr>
+  </table>
+  </div>
+  <div id="schedule">
+    <table>
+      <tr>
+  <td><label for="createschedule"><b>Schedule Name:</b></label></td>
+  <td><input type="text" class="input" id="schedule_name" placeholder="Enter the schedule name"></td>
+  </tr>
+  
+  <tr><td><label for="number_of_course"><b>Number of Subjects:</b></label></td>
+  <td><input type="text" id="number_of_subjects" placeholder="Enter number of subjects"></td>
+  </tr>
+  <tr>
+  <td><label class="input" for="number_of_course"><b>Number of Courses:</b></label></td>
+  <td><input type="text" id="number_of_courses" placeholder="Enter number of courses"></td>
+  </tr>
+  <div id="schedule_subjects"> 
+  <tr><td>  <label for="deleteschedule"><b>DeleteSchedule:</b></label></td>
+   <td> <select name="deleteschedu" class="button" id="delete_schedule" onchange="DeleteSchedule()">
+        <option value="none">None</option>
+        <option value="all">All Schedules</option>
+        <option value = "single">Specified Schedule</option>
+        </select></td>
+        </tr>
+  </div>
+  <tr><td><input type = "submit" class="button" value="CreateSchedule" onclick="CreateSchedule()"></td>
+  <td><input type = "submit" class="button" value = "Save/Update" onclick="SaveUpdateSchedule()"></td>
+  </tr>
+  <tr><td><input type="submit" id="timetable_button" style="text-align:center"value = "Timetable" onclick="Timetable_Schedule()"></td></tr>
+  
+  </table>
+  <div id="javascriptfunc"> </div>
+  </div>
+</div>
+<hr>
+<div id="search_results"> </div>
+</body>
+</html>
